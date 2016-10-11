@@ -1,0 +1,96 @@
+header{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+	background-image: linear-gradient(to bottom,#337ab7 0,#2e6da4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2e6da4', GradientType=0);
+    background-repeat: repeat-x;
+    color: #fff;
+    padding: 10px;
+}
+.subHeader{
+font-size: 18px;
+margin: 10px;
+background-image: linear-gradient(to bottom, #8cd79a 0, #29b51e 100%);
+
+}
+.leftFrame,.rightFrame{
+    width: 50%;
+    float: left;
+}
+.actoinOnBuddyList{
+    margin: 10px 40px
+}
+.actoinOnBuddyList input{
+	margin-right:10px;
+}
+
+.buddyListCont{
+    border-right: 1px solid gray;
+    padding: 0px;
+	min-height:800px;
+}
+.buddyList{
+    list-style: none;
+    overflow-y: auto;
+    margin: 0px;
+    margin-top: 10px;
+    padding: 0px;
+	height: 550px;
+}
+
+.buddyList li{
+    margin: 10px 40px;
+    padding: 15px;
+    border: solid 1px #000;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgba(188, 188, 188, 0.42);
+    background-image: url('../images/arrow.png');
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    background-size: 35px 35px;
+}
+.buddyList li:hover{
+	background-color: rgba(153, 153, 153, 0.53);
+}
+.fieldGroup{
+    margin: 5px 5px;
+}
+.fieldGroup label,.fieldGroup span{
+    margin: 0px 5px;
+}
+
+.active-listItem{
+    background-color: gray;
+}
+.buddyDetail,.addBuddyForm{
+	padding: 0px 20px;
+}
+.buddyDetail .row,.addBuddyForm .row{
+	margin:0;
+}
+.addBuddyForm .fieldGroup{
+	width:100%;
+}
+.addBuddyForm label{
+	width:15%;
+}
+.deleteConfirmationBox > p{
+	margin: 10px 0 10px 0;
+    font-weight: bold;
+}
+.clearFixed{
+    clear:both;
+}
+span.error{
+    float: left;
+    margin: 0px;
+    font-size: 12px;
+    color: red
+}
+button{
+    cursor: pointer;
+}

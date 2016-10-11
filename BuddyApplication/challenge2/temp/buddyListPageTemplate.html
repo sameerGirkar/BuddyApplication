@@ -1,0 +1,126 @@
+<header><span>Buddy List</span></header>
+
+<div class="dataCont">
+<div class="leftFrame">
+    <div class="buddyListCont">
+        <nav class="actoinOnBuddyList">
+        <input type="text" ng-model="searchValue" placeholder="Search" >
+        <label>Order By : </label>
+        <select ng-model="orderByValue">
+            <option value="firstName" selected>First Name</option>
+            <option value="status">Status </option>
+            <option value="dob">Date of birth</option>
+            <option value="priority">Priority</option>
+        </select>
+        <button ng-click="addBuddy()" class="btn btn-primary pull-right">Add Buddy</button>
+        </nav>
+        <ul class="buddyList">
+        <buddy-list-item ng-repeat="user in userList | filter:searchValue | orderBy: orderByValue" user="user" buddy-detail-click = "buddyDetailClick(user,index)" index="{{$index}}" active-buddy-index="activeBuddy.index" is-active="isActive(user)" select="select(event)"></buddy-list-item>
+        </ul> 
+        <div class="clearFixed"></div>    
+        
+    </div>
+</div>
+<div class="rightFrame">
+    <div class="buddyDetail" ng-hide="addBuddyForm">
+        <header class="subHeader">Buddy Details</header>
+        <div class="row">
+                <div class="fieldGroup left"><label>User Name</label><span>{{activeBuddy.userName}}</span></div>
+            <div class="fieldGroup right"><label>Status Name</label><span>{{activeBuddy.status}} </span><span ng-hide="activeBuddy.status == 'available'">from {{activeBuddy.lastSignInDate}}</span></div>
+                <div class="clearFixed"></div>
+            </div>
+            <div class="row">
+                <div class="fieldGroup left"><label>First Name</label><span>{{activeBuddy.firstName}}</span></div>
+                <div class="fieldGroup right"><label>Last Name</label><span>{{activeBuddy.lastName}}</span></div>
+                <div class="clearFixed"></div>
+            </div>
+          <div class="row">
+                <div class="fieldGroup left"><label>email id</label><span>{{activeBuddy.emailId}}</span></div>
+                <div class="fieldGroup right"><label>birth Date</label><span>{{activeBuddy.dob}}</span></div>
+                <div class="clearFixed"></div>
+            </div>
+          <div class="row">
+                <div class="fieldGroup left"><label>Biodata</label><p>{{activeBuddy.bio}}</p></div>
+                
+            </div>
+        <div class="deleteBuddyCont">
+        <button ng-click="deleteBuddyConfBox = true" class="btn btn-primary">Delete Buddy</button>
+        <div class="deleteConfirmationBox" ng-show="deleteBuddyConfBox">
+            <p>ARE YOU SURE YOU WANT TO DELETE BUDDY</p>
+            <div><button ng-click="deleteBuddy(activeBuddy)" class="btn btn-primary">YES</button> <button ng-click="deleteBuddyConfBox =falue" class="btn btn-primary">NO</button></div>
+        </div>    
+        </div>
+    </div>
+    <div class="addBuddyBox" ng-show="addBuddyForm">
+    <header class="subHeader">Add new Buddy Profile</header>
+    <form name="addForm" class="addBuddyForm" >
+        <div class="row">
+                <div class="fieldGroup left"><label>User Name</label><span>
+                    <input type="text" name="userName" ng-model="buddy.userName" required maxlength="30"></span>
+            <span>
+            <div role="alert" class="fieldGroup">
+              <span class="error" ng-show="addForm.userName.$error.required">
+                User Name Required!</span>
+            </div>        
+            </span>
+            </div>
+        <div class="clearFixed"></div>
+        </div>
+        <div class="row">
+                <div class="fieldGroup left"><label>First Name</label><span>
+                    <input type="text" name="firstName" ng-model="buddy.firstName" required maxlength="30">
+                    </span>
+            <div role="alert" class="fieldGroup">
+              <span class="error" ng-show="addForm.firstName.$error.required">
+                First Name Required!</span>
+            </div> 
+                    <div class="clearFixed"></div>
+            </div>
+                <div class="fieldGroup right"><label>Last Name</label><span>
+                    <input type="text" name="lastName" ng-model="buddy.lastName" required maxlength="30"></span>
+            <div role="alert" class="fieldGroup">
+              <span class="error" ng-show="addForm.lastName.$error.required">
+                Last Name Required!</span>
+            </div> 
+                    <div class="clearFixed"></div>
+            </div>
+                <div class="clearFixed"></div>
+        </div>
+        <div class="row">
+            <div class="fieldGroup left"><label>email id</label><span>
+                <input type="email" name="emailId" ng-model="buddy.emailId" required placeholder="sample@domain.com">
+                    </span>
+                <div role="alert" class="fieldGroup">
+              <span class="error" ng-show="addForm.emailId.$error.required">
+                Email id Required!</span>
+              <span class="error" ng-show="addForm.emailId.$error.email">
+                Please enter valid email id!</span>
+            </div>
+                <div class="clearFixed"></div>
+            </div>
+             
+            <div class="fieldGroup right"><label>birth Date</label><span>
+                    <input type="date" name="Date of birth" ng-model="buddy.dob">
+                    </span>
+            </div>
+            
+            <div class="clearFixed"></div>
+        </div>
+        <div class="row">
+          <div class="fieldGroup left"><label>Biodata</label>
+          <input type="textarea" name="bio" ng-model="buddy.bio">        
+          </div>
+          <div class="fieldGroup right"><label>Priority</label>
+          <select ng-model="buddy.priority">
+              <option value="1" >High</option>
+              <option value="2" selected>Medium</option>
+              <option value="3">Low</option>
+          </select>        
+          </div>
+        </div>
+        <button ng-click="newBuddy(buddy,addForm.$valid)" class="btn btn-primary"> new Buddy</button>
+    </form>
+    </div>
+</div>
+<div class="clearFixed"></div>       
+</div>

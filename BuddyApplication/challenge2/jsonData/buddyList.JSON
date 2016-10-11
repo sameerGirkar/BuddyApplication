@@ -1,0 +1,56 @@
+[{
+    "userName": "tony",
+    "firstName":"Tony",
+    "lastName":"alice",
+    "status":"available",
+    "lastSignInDate":"07/12/2014",
+    "emailAddress":"",
+    "birthday":"",
+    "bio":"",
+    "priority":1
+    },
+    {
+    "userName": "revaldo",
+    "firstName":"Revaldo",
+    "lastName":"flomberg",
+    "status":"busy",
+    "lastSignInDate":"03/20/2015",
+    "emailAddress":"",
+    "birthday":"",
+    "bio":"",
+    "priority":2
+    },
+    {
+    "userName": "steve",
+    "firstName":"Steve",
+    "lastName":"Smith",
+    "status":"ideal",
+    "lastSignInDate":"03/20/2015",
+    "emailAddress":"",
+    "birthday":"",
+    "bio":"",
+    "priority":2
+    },
+    {
+    "userName": "jasmine",
+    "firstName":"Jasmine",
+    "lastName":"woods",
+    "status":"offline",
+    "lastSignInDate":"30/09/2015",
+    "emailAddress":"",
+    "birthday":"",
+    "bio":"",
+    "priority":3
+    },
+    {
+    "userName": "glen",
+    "firstName":"Glen",
+    "lastName":"Mcgrath",
+    "status":"available",
+    "lastSignInDate":"12/05/2015",
+    "emailAddress":"",
+    "birthday":"",
+    "bio":"",
+    "priority":1
+    }
+]
